@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+	
+	<h:body>
+		<ui:composition template="/baseTemplate.xhtml">
+			<ui:define name="body">
+				<h1>This is the About Page Area</h1>
+			</ui:define>
+			<ui:define name="extend">
+				<h3><strong>This is who we are:</strong></h3>
+				<h:form id="registerForm2" styleClass="registrationForm">
+					<h2>Register Here:</h2>
+					<h:outputLabel value="Full Name: &nbsp;" />
+					<f:ajax event="keyup" render="nameError">
+						<h:inputText id="name" value="#{customRegister.name}" validator="#{customRegister.validateFullName}"></h:inputText>
+					</f:ajax>
+					<hr/>
+					<h:outputLabel value="Email Address: &nbsp;" />
+					<h:inputText id="email" value="#{customRegister.email}" validatorMessage="InValid Email Address">
+						<f:validateRegex pattern="[\w\.-]*[a-zA-Z0-9_]@[\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]" />
+						<f:ajax event="keyup" render="emailError" />
+					</h:inputText>
+					<hr/>
+					<h:outputLabel value="Password: &nbsp;" />
+					<h:inputSecret value="#{customRegister.pass}" />
+					<hr/>
+					<h:outputLabel value="Confirm Password: &nbsp;" />
+					<h:inputSecret value="#{customRegister.cpass}" />
+					<br/><br/>
+					<h:commandButton styleClass="customBtn" value="Submit Form" action="#{customRegister.registerUser}">
+					</h:commandButton>
+					<br/><br/>
+					<h:message for="name" id="nameError" /> <br/>
+					<h:message for="email" id="emailError" /> <br/>
+					<h:messages />'
+					<br/><br/>
+					<div style="font-weight: bolder;">
+						<h:outputLabel value="Full Name: #{customRegister.name}" />
+						<hr/>
+						<h:outputLabel value="Email Address: #{customRegister.email}" />
+					</div>
+				</h:form>
+			</ui:define>
+		</ui:composition>
+	</h:body>
+	
+</html>

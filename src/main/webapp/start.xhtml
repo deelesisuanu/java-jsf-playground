@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+	
+	<h:head>
+		<title>Conditional Navigation Rule</title>
+	</h:head>
+	
+	<h:body>
+		<h:form>
+			<h:outputLabel value="Select Item to Purchase:" />
+			<h:selectOneMenu value="#{processor.item}">
+				<f:selectItem itemValue="Bracelet" />
+				<f:selectItem itemValue="Engagement Ring" />
+				<f:selectItem itemValue="Necklace" />
+				<f:selectItem itemValue="Nose Ring" />
+			</h:selectOneMenu>
+			<hr/>
+			<h:commandButton action="process" value="Process Items" />
+		</h:form>
+	</h:body>
+	
+</html>

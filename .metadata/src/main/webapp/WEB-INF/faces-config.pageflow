@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf16257366272550" configfile="/CombinedLearnFaces/src/main/webapp/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" x="122" y="178" id="pf16274669509610" referenceLink="//@navigationRule.0/@fromViewId|"/>
+  <nodes xsi:type="pageflow:PFPage" x="122" y="562" id="pf16274670471341" referenceLink="//@navigationRule.0/@fromViewId|" path="/"/>
+  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" x="122" y="1378" id="pf16274685694042" referenceLink="//@navigationRule.0/@fromViewId|" path="/index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="navigator.xhtml" x="122" y="946" id="pf16274686537023" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf16274686537024 pf16274688235126" path="navigator.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="home.xhtml" x="338" y="754" id="pf16274686537025" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf16274686537024" path="home.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" x="338" y="1138" id="pf16274688235127" referenceLink="//@navigationRule.0/@navigationCase.1/@toViewId|" inlinks="pf16274688235126" path="index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="start.xhtml" x="122" y="1810" id="pf16279853349360" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf16279853349361 pf16279853349362" path="start.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="payment.xhtml" x="338" y="1618" id="pf16279853349373" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf16279853349361" path="payment.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="process.xhtml" x="338" y="2002" id="pf16279853349374" referenceLink="//@navigationRule.1/@navigationCase.1/@toViewId|" inlinks="pf16279853349362" path="process.xhtml"/>
+  <links id="pf16274686537024" target="pf16274686537025" source="pf16274686537023" outcome="page2" fromaction="#{navigate.moveNextPage}"/>
+  <links id="pf16274688235126" target="pf16274688235127" source="pf16274686537023" outcome="navigator" fromaction="#{navigate.moveToNavigatePage}"/>
+  <links id="pf16279853349361" target="pf16279853349373" source="pf16279853349360" outcome="process"/>
+  <links id="pf16279853349362" target="pf16279853349374" source="pf16279853349360" outcome="process"/>
+</pageflow:Pageflow>

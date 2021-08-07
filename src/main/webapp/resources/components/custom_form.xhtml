@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:composite="http://java.sun.com/jsf/composite">
+	
+	<h:head>
+		<title>Simple Custom Form</title>
+	</h:head>
+	
+	<h:body>
+		<composite:interface>
+			<composite:attribute name="fname"  required="true" />
+			<composite:attribute name="email" required="true" />
+			<composite:attribute name="pass" required="true" />
+			<composite:attribute name="cpass" required="true" />
+		</composite:interface>
+		<composite:implementation>
+			<h:outputLabel value="Full Name: &nbsp;" />
+			<h:inputText value="#{cc.attrs.fname}" />
+			<hr/>
+			<h:outputLabel value="Email Address: &nbsp;" />
+			<h:inputText value="#{cc.attrs.email}" />
+			<hr/>
+			<h:outputLabel value="Password: &nbsp;" />
+			<h:inputSecret value="#{cc.attrs.pass}" />
+			<hr/>
+			<h:outputLabel value="Confirm Password: &nbsp;" />
+			<h:inputSecret value="#{cc.attrs.cpass}" />
+		</composite:implementation>
+	</h:body>
+	
+</html>

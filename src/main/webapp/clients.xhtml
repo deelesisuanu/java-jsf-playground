@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:co="http://java.sun.com/jsf/composite/components">
+	
+	<h:body>
+		<h2>This is Content</h2>
+		<ui:composition template="/baseTemplate.xhtml">
+			<ui:define name="headerTitle">Client Page</ui:define>
+			<ui:define name="body">
+				<h1>This is the Client Area</h1>
+			</ui:define>
+			<ui:define name="extend">
+				<h3><strong>We Provide the following services:</strong></h3>
+				<ol>
+					<li>Competitions</li>
+					<li>Trainings</li>
+					<li>Practice Areas</li>
+					<li>Library</li>
+				</ol>
+				<h:form id="registrationForm" styleClass="registrationForm">
+					<h2>Register Here:</h2>
+					<co:custom_form />
+					<br/><br/>
+					<h:commandButton styleClass="customBtn" value="Submit Form" action="#{customRegister.registerUser}" />
+					<br/><br/>
+					<h:messages showDetail="true" />
+				</h:form>
+				<br/><br/><br/>
+			</ui:define>
+		</ui:composition>
+	</h:body>
+	
+</html>

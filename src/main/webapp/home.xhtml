@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+	
+	<h:head>
+		<title></title>
+	</h:head>
+	
+	<h:body>
+		
+		<h:form>
+			<h:outputLabel value="Enter Name:" />
+			<h:inputText id="name" value="#{tester.name}" validatorMessage="Have only Alphabets">
+				<f:validateRegex pattern="^([a-zA-Z]+(.)?[\s]*)$"></f:validateRegex>
+			</h:inputText>
+			<br/><br/>
+			<h:outputLabel value="Enter Salary:" />
+  			<h:inputText id="salary" value="#{tester.salary}" validatorMessage="Please enter a value between 10000.50 and 45000.00">
+  				<f:validateDoubleRange minimum="10000.50" maximum="45000.00" />
+  			</h:inputText>
+  			<br/><br/>
+  			<h:outputLabel value="Enter Age:" />
+  			<h:inputText value="#{tester.age}">
+  				<f:converter converterId="javax.faces.Integer" />
+  				<f:validator validatorId="com.dele.main.learn.CustomValidator" />
+  			</h:inputText>
+  			<br/><br/>
+  			<h:outputLabel value="Enter Date Employed (dd/mm/yyyy format preferred):" />
+  			<h:inputText value="#{tester.employed}" id="employed">
+  				<f:convertDateTime type="date" pattern="mm/dd/yyyy" />
+  			</h:inputText>
+  			<br/><br/>
+  			<h:outputLabel value="Enter Profile Link: " />
+  			<h:inputText value="#{tester.data}" id="link">
+  				<f:converter converterId="com.dele.main.learn.CustomConverter" />
+  			</h:inputText>
+  			<br/>
+  			<h:messages />
+  			<br/>
+  			<h:commandButton value="Submit" action="home.xhtml" />
+		</h:form>
+		
+		<br/>
+		<h:outputText value="#{tester.name}" />
+		<hr/>
+		<h:outputText value="#{tester.salary}" />
+		<hr/>
+		<h:outputLabel value="Date Employed: " />
+		<h:outputText value="#{tester.employed}">
+			<f:convertDateTime pattern="mm/dd/yyyy" />
+		</h:outputText>
+		<hr/>
+		<h:outputText value="#{tester.data}" />
+		
+	</h:body>
+
+</html>

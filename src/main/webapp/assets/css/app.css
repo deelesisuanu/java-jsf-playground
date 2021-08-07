@@ -1,0 +1,9 @@
+@charset "ISO-8859-1";
+
+.normalTxt {
+	font-weight: bold !important;
+	color: aqua !important;
+	border: 5px dotted red;
+	border-radius: 15px;
+	margin: 12px;
+}

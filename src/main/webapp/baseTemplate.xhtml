@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+	
+	<h:head>
+		<title>
+			<ui:insert name="headerTitle">Default Header Title</ui:insert>
+		</title>
+		<style>
+			.registrationForm {
+				margin: 15px !important;
+				background-color: #FFFFFF;
+				color: #000;
+				padding: 15px;
+			}
+			.customBtn {
+				padding: 10px;
+				background-color: #F0000F;
+				color: #FFFFFF !important;
+				border: none;
+				border-radius: 4px;
+				cursor: pointer;
+			}
+		</style>
+	</h:head>
+	
+	<h:body style="margin: 0">
+		<h1 style="background-color: black; color: white">Welcome to Tech Training</h1>
+		<hr/>
+		<div style="position: relative; display: flex;">
+			<div style="flex: 1">
+				<ui:include src="/sidebar.xhtml" />
+			</div>
+			<div style="flex: 8; background-color: blue; color: white;">
+				<ui:insert name="body" />
+				<br/><hr/><br/>
+				<ui:insert name="extend" />
+				<br/><br/><br/><br/><br/><br/>
+			</div>
+		</div>
+		<div style="overflow-x: hidden; position: absolute; bottom: -20; background-color: red; color: white; font-weight: bolder; padding: 12px; width: 100%;">
+			<p>&copy; All Rights Reserved 2021 Simple Design</p>
+		</div>
+	</h:body>
+	
+</html>

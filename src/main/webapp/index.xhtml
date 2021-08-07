@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   
+  <html xmlns="http://www.w3.org/1999/xhtml"
+  		xmlns:h="http://java.sun.com/jsf/html"
+  		xmlns:f="http://java.sun.com/jsf/core">
+  		
+  	<h:head>
+  		<title>Welcome to JSF</title>
+  	</h:head>
+  	
+  	<!-- j:inputText -->
+  	
+  	<h:body>
+  		#{jsfintro.displayMessage()}
+  		
+  		<hr/>
+  		
+  		<input type="text" value="Hello World" />
+  		<br/><br/>
+  		<h:inputText value="Hello Class" />
+  		<br/><br/>
+  		<h:inputSecret value="AmaPassword" />
+  		<br/><br/>
+  		
+  		<h:inputTextarea rows="6" cols="30" value="Hello Class..Textarea" />
+  		
+  		<hr/>
+  		
+  		<h2> h:selectManyCheckbox </h2>
+  		
+  		<h:form>
+  			<h:selectManyCheckbox>
+  				<f:selectItem itemValue="male" itemLabel="Male" />
+  				<f:selectItem itemValue="female" itemLabel="Female" />
+  				<f:selectItem itemValue="none" itemLabel="Rather Not say" />
+  				<f:selectItem itemValue="none" itemLabel="Not your business" />
+  			</h:selectManyCheckbox>
+  		</h:form>
+  		
+  		<hr/>
+  		
+  		<h1>REGISTRATION FORM</h1>
+  		
+  		<h:form id="regForm">
+  			<div>
+  				<h:outputLabel for="fullname">Full Name</h:outputLabel>
+  				<br/>
+  				<h:inputText id="name-id" value="#{register.name}">
+  				</h:inputText>
+  			</div>
+  			<hr/>
+  			<div>
+  				<h:outputLabel for="age">Salary:</h:outputLabel>
+  				<br/>
+  				<h:inputText id="age-id" value="#{register.age}" validatorMessage="Please enter a value between 10000.50 and 45000.00">
+  					<f:validateDoubleRange minimum="10000.50" maximum="45000.00" />
+  				</h:inputText>
+  			</div>
+  			<hr/>
+  			<div>
+  				<h:outputLabel for="email">Email Address</h:outputLabel>
+  				<br/>
+  				<h:inputText id="email-id" value="#{register.email}" />
+  			</div>
+  			<hr/>
+  			<div>
+  				<h:outputLabel for="password">Password</h:outputLabel>
+  				<br/>
+  				<h:inputSecret id="password-id" value="#{register.password}" />
+  			</div>
+  			<hr/>
+  			<div>
+  				<h:outputLabel for="gender">Gender</h:outputLabel>
+  				<br/>
+  				<h:selectOneRadio value="#{register.gender}">
+  					<f:selectItem itemValue="male" itemLabel="Male" /> 
+  					<f:selectItem itemValue="female" itemLabel="Female" />
+  				</h:selectOneRadio>
+  			</div>
+  			<hr/>
+  			<div>
+  				<h:outputLabel for="homeaddress">Home Address</h:outputLabel>
+  				<br/>
+  				<h:inputTextarea cols="50" rows="5" value="#{register.address}" />
+  			</div>
+  			<hr/>
+  			<h:commandButton action="register.xhtml" value="Submit Form" />
+  		</h:form>
+  		
+  	</h:body>
+  
+  </html>

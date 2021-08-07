@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+	<h:head>
+		<title></title>
+	</h:head>
+	
+	<h:body>
+		<h:form>
+			<h:outputLabel value="Navigator Page" />
+			<hr/>
+			<h:commandButton value="Navigate" action="#{navigate.moveNextPage}" />
+			<hr/>
+			<h:commandButton value="Same Page" action="#{navigate.moveToNavigatePage}" />
+			<hr/><hr/>
+			<h:commandLink action="#{navigate.viewPage}" value="Page 2">
+				<f:param name="pageId" value="page2" />
+			</h:commandLink>
+		</h:form>
+	</h:body>
+
+</html>

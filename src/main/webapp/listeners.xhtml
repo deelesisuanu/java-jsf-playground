@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+	
+	<h:head>
+		<title>Listeners</title>
+		<link type="text/css" rel="stylesheet" href="./assets/css/app.css" />
+		<style type="text/css">
+			.normalTxt {
+				font-weight: normal;
+				color: green;
+				border: 5px dotted blue !important;
+				border-radius: 5px;
+				margin: 12px !important;
+			}
+		</style>
+	</h:head>
+	
+	<h:body>
+		<h2>ValueChange Listener</h2>
+		<h:form id="valueChanged">
+			<h:outputLabel styleClass="normalTxt" value="Please Choose a Contry: &nbsp;&nbsp;&nbsp;" />
+			<h:selectOneMenu value="#{countries.selectedCountry}" valueChangeListener="countries.localChanged" onchange="submit()">
+				<f:selectItems value="#{countries.countries}" />
+			</h:selectOneMenu>
+			<hr/>
+			<h:outputText styleClass="normalTxt" id="country" value="#{countries.selectedCountry}" />
+		</h:form>
+		<hr/>
+		
+		<h2>ActionChange Listener</h2>
+		<h:form id="actionChanged">
+			<hr/>
+			<h:commandButton value="Submit">
+				<f:actionListener type="com.dele.main.learn.DefinedActionListener" />
+			</h:commandButton>
+			<hr/>
+			<h:outputText styleClass="normalTxt" value="#{actions.data}" />
+		</h:form>
+		<hr/>
+		
+		<h2>Phase Event Listener</h2>
+		<h:form id="phaseAction">
+			<h3>Please Enter your details</h3>
+			<h:panelGrid columns="2">
+				<h:outputText styleClass="normalTxt" value="Enter Your Name" />
+				<h:inputText id="phaseName" value="#{fromBean.name}" />
+				
+				<h:outputText styleClass="normalTxt" value="Enter Your Password" />
+				<h:inputSecret id="phasePassword" value="#{fromBean.password}" />
+				
+				<h:commandButton style="background-color: green; color: white; padding: 20px; border: none; border-radius: 4px; cursor: pointer; margin: 5px !important;" value="Grant Access" action="#{fromBean.checkUser}" />
+				
+			</h:panelGrid>
+			
+			<hr/>
+			<h:outputLabel value="Current Result is: " />
+			<h:outputText styleClass="normalTxt" value="#{fromBean.result}" />
+			
+			
+		</h:form>
+	</h:body>
+	
+</html>

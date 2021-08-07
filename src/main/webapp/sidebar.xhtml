@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+	
+	<h:head>
+		<style>
+			#navigation>a {
+				display: inline-block;
+				padding: 5px;
+			}
+			.navigated {
+				text-decoration: none;
+			}
+		</style>
+	</h:head>
+	
+	<h:body>
+		<h:form id="navigation">
+			<h:commandLink styleClass="navigated" value="Client" action="clients" />
+			<h:commandLink styleClass="navigated" value="About" action="about" />
+		</h:form>
+	</h:body>
+</html>

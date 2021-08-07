@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_3.xsd"
+    version="2.3">
+    
+    <navigation-rule>
+    	<from-view-id>navigator.xhtml</from-view-id>
+    	<navigation-case>
+    		<from-action>#{navigate.moveNextPage}</from-action>
+    		<from-outcome>page2</from-outcome>
+    		<to-view-id>home.xhtml</to-view-id>
+    	</navigation-case>
+    	<navigation-case>
+    		<from-action>#{navigate.moveToNavigatePage}</from-action>
+    		<from-outcome>navigator</from-outcome>
+    		<to-view-id>index.xhtml</to-view-id>
+    	</navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+    	<from-view-id>start.xhtml</from-view-id>
+    	<navigation-case>
+    		<from-outcome>process</from-outcome>
+    		<if>#{processor.item == "Necklace"}</if>
+    		<to-view-id>payment.xhtml</to-view-id>
+    	</navigation-case>
+    	<navigation-case>
+    		<from-outcome>process</from-outcome>
+    		<to-view-id>process.xhtml</to-view-id>
+    	</navigation-case>
+    </navigation-rule>
+    
+    <lifecycle>
+    	<phase-listener>com.dele.main.learn.CustomPhaseListener</phase-listener>
+    </lifecycle>
+    
+</faces-config>
